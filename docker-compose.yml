@@ -1,0 +1,58 @@
+version: '3'
+
+networks:
+  site:
+
+services: 
+  yayhooray:
+    build:
+      context: .
+      dockerfile: frontend.dockerfile
+    container_name: yayhooray
+    ports: 
+      - 3000:3000
+    volumes:
+      - ./TeslaYay:/app:delegated
+    depends_on:
+      - redis
+      - teslaapi
+    networks:
+      - site
+      
+  teslaapi: 
+    build: 
+      context: .
+      dockerfile: backend.dockerfile
+    container_name: teslaapi
+    ports: 
+      - 3001:3000
+    volumes:
+      - ./TeslaAPI/:/app:delegated
+    depends_on:
+      - database
+    networks: 
+      - site
+    
+  redis: 
+    image: 'redis'
+    volumes:
+      - ./redis:/bitnami/redis/data
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - site
+
+  database: 
+    image: 'mongo'
+    container_name: 'mongo'
+    environment:
+      - MONGO_INITDB_DATABASE=yay
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    volumes: 
+      #- ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongodb:/data/db
+    ports:
+      - '27017-27019:27017-27019'
+    networks:
+      - site
