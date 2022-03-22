@@ -1,0 +1,6 @@
+[submodule "TeslaYay"]
+	path = TeslaYay
+	url = git@github.com:cham/TeslaYay.git
+[submodule "TeslaAPI"]
+	path = TeslaAPI
+	url = git@github.com:cham/TeslaAPI.git
