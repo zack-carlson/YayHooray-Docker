@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"tesladb.messages"},{"v":2,"key":{"created":-1},"name":"created_-1","ns":"tesladb.messages","background":true},{"v":2,"key":{"created":1},"name":"created_1","ns":"tesladb.messages","background":true}],"uuid":"5ee2f2c3f0d14fefa7bc6bdec09a23d3"}

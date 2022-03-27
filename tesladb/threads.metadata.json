@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"tesladb.threads"},{"v":2,"unique":true,"key":{"urlname":1},"name":"urlname_1","ns":"tesladb.threads","background":true},{"v":2,"key":{"last_comment_time":-1},"name":"last_comment_time_-1","ns":"tesladb.threads","background":true}],"uuid":"75f29f0f6b084275988c9abfa1386326"}
