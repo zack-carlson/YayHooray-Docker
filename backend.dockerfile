@@ -9,7 +9,7 @@ WORKDIR /app
 
 #RUN apt-get update || : && apt-get install python -y --force-yes
 #RUN apt-get update || : && apt-get install -y --force-yes build-essential python
-RUN apk --no-cache add --virtual builds-deps build-base python
+#RUN apk --no-cache add --virtual builds-deps build-base python
 
 
 # run npm install in our local machine
